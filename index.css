@@ -1,0 +1,198 @@
+html
+{
+    margin: 0;
+    height: 100%;
+}
+
+body
+{
+    background-color: #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+input
+{
+    display: none;
+}
+
+main
+{
+    width: 80%;
+    height: 200px;
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+.vegetable
+{
+    position: absolute;
+    left: 600px;
+    width: 200px;
+    height: 150px;
+    box-shadow: 0 5px 10px #ccc;
+    transition: all .5s;
+    z-index: 7;
+}
+
+.recepts
+{
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+    bottom: 50%;
+    color: white;
+}
+
+.vegetable img
+{
+    width: 100%;
+}
+
+.cuisine
+{
+    position: absolute;
+    top: -25%;
+    left: -80%;
+    width: 330%;
+    height: 150%;
+    background-color: #fff;
+    transform: translateZ(-2px) rotateX(180deg);
+    backface-visibility: hidden;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .3);
+    font-size: .9em;
+}
+
+[id='recipe-1']:checked ~ main .garlic,
+[id='recipe-2']:checked ~ main .pepper,
+[id='recipe-3']:checked ~ main .onion,
+[id='recipe-4']:checked ~ main .cauliflower,
+[id='recipe-5']:checked ~ main .tomato,
+[id='recipe-6']:checked ~ main .squash,
+[id='recipe-7']:checked ~ main .pumpkin
+{
+    transform: rotate3d(1, 0, 0, -180deg) translateZ(-32px);
+}
+
+[id='garlic']:checked ~ main article .garlic:hover,
+[id='pepper']:checked ~ main article .pepper:hover,
+[id='onion']:checked ~ main article .onion:hover,
+[id='cauliflower']:checked ~ main article .cauliflower:hover,
+[id='tomato']:checked ~ main article .tomato:hover,
+[id='squash']:checked ~ main article .squash:hover,
+[id='pumpkin']:checked ~ main article .pumpkin:hover
+{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: .8s;
+}
+
+[id='garlic']:checked ~ main article .garlic,
+[id='pepper']:checked ~ main article .pepper,
+[id='onion']:checked ~ main article .onion,
+[id='cauliflower']:checked ~ main article .cauliflower,
+[id='tomato']:checked ~ main article .tomato,
+[id='squash']:checked ~ main article .squash,
+[id='pumpkin']:checked ~ main article .pumpkin
+{
+    transform: scale(1.2);
+}
+
+[id='garlic']:checked ~ main article .pepper,
+[id='pepper']:checked ~ main article .onion,
+[id='onion']:checked ~ main article .cauliflower,
+[id='cauliflower']:checked ~ main article .tomato,
+[id='tomato']:checked ~ main article .squash,
+[id='squash']:checked ~ main article .pumpkin
+{
+    transform: translateX(170px) rotateY(-60deg);
+    z-index: 6;
+}
+
+[id='garlic']:checked ~ main article .onion,
+[id='pepper']:checked ~ main article .cauliflower,
+[id='onion']:checked ~ main article .tomato,
+[id='cauliflower']:checked ~ main article .squash,
+[id='tomato']:checked ~ main article .pumpkin
+{
+    transform: translateX(240px) rotateY(-55deg);
+    z-index: 5;
+}
+
+[id='garlic']:checked ~ main article .cauliflower,
+[id='pepper']:checked ~ main article .tomato,
+[id='onion']:checked ~ main article .squash,
+[id='cauliflower']:checked ~ main article .pumpkin
+{
+    transform: translateX(310px) rotateY(-50deg);
+    z-index: 4;
+}
+
+[id='garlic']:checked ~ main article .tomato,
+[id='pepper']:checked ~ main article .squash,
+[id='onion']:checked ~ main article .pumpkin
+{
+    transform: translateX(380px) rotateY(-45deg);
+    z-index: 3;
+}
+
+[id='garlic']:checked ~ main article .squash,
+[id='pepper']:checked ~ main article .pumpkin
+{
+    transform: translateX(450px) rotateY(-40deg);
+    z-index: 2;
+}
+
+[id='garlic']:checked ~ main article .pumpkin
+{
+    transform: translateX(520px) rotateY(-35deg);
+    z-index: 1;
+}
+
+[id='pumpkin']:checked ~ main article .squash,
+[id='squash']:checked ~ main article .tomato,
+[id='tomato']:checked ~ main article .cauliflower,
+[id='cauliflower']:checked ~ main article .onion,
+[id='onion']:checked ~ main article .pepper,
+[id='pepper']:checked ~ main article .garlic
+{
+    transform: translateX(-170px) rotateY(60deg);
+}
+
+[id='pumpkin']:checked ~ main article .tomato,
+[id='squash']:checked ~ main article .cauliflower,
+[id='tomato']:checked ~ main article .onion,
+[id='cauliflower']:checked ~ main article .pepper,
+[id='onion']:checked ~ main article .garlic
+{
+    transform: translateX(-240px) rotateY(55deg);
+}
+
+[id='pumpkin']:checked ~ main article .cauliflower,
+[id='squash']:checked ~ main article .onion,
+[id='tomato']:checked ~ main article .pepper,
+[id='cauliflower']:checked ~ main article .garlic
+{
+    transform: translateX(-310px) rotateY(50deg);
+}
+
+[id='pumpkin']:checked ~ main article .onion,
+[id='squash']:checked ~ main article .pepper,
+[id='tomato']:checked ~ main article .garlic
+{
+    transform: translateX(-380px) rotateY(45deg);
+}
+
+[id='pumpkin']:checked ~ main article .pepper,
+[id='squash']:checked ~ main article .garlic
+{
+    transform: translateX(-450px) rotateY(40deg);
+}
+
+[id='pumpkin']:checked ~ main article .garlic
+{
+    transform: translateX(-520px) rotateY(35deg);
+}
